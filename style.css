@@ -1,0 +1,138 @@
+:root {
+    --Cyan: hsl(179, 62%, 43%);
+    --Cyan-light: hsl(179, 55%, 54%);
+    --Bright-Yellow: hsl(71, 73%, 54%);
+    --Light-Gray: hsl(204, 43%, 93%);
+    --Grayish-Blue: hsl(218, 22%, 67%);
+    --White: #fff;
+}
+html {
+    box-sizing: border-box;
+    color: #4ABEBD;
+}
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    color: var(--White);
+    background-color: var(--Light-Gray);
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 0px 10px 2px rgba(0,0,0,.1);
+    overflow: hidden;
+}
+.card__box {
+    padding: 30px 30px;
+}
+.card-descr {
+    background-color: var(--White);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-price {
+    background-color: var(--Cyan);
+}
+.card-advantages {
+    background-color: var(--Cyan-light);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card-descr__title {
+    color: var(--Cyan);
+    font-weight: 700;
+}
+.card-descr__subtitle {
+    color: var(--Bright-Yellow);
+    font-weight: 700;
+}
+.card-descr__text {
+    color: var(--Grayish-Blue);
+    margin-bottom: 0;
+}
+.card-price__price {
+     color: var(--Light-Gray);
+}
+.card-price__price span {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--White);
+}
+.card-price__text {
+    margin-bottom: 25px;
+}
+.card-price__btn {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 6px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: var(--White);
+    background-color: var(--Bright-Yellow);
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 0px 3px 2px rgba(0,0,0,.1);
+
+    transition: all .3s ease;
+}
+.card-advantages__title {
+    margin-bottom: 10px;
+}
+.card-advantages__list {
+    font-size: 15px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: var(--Light-Gray);
+}
+
+@media (min-width: 600px) {
+    .card {
+        display: grid;
+        grid-template-columns: 300px 300px;
+        grid-template-rows: 200px 250px;
+    }
+    .card-descr {
+        grid-column: 1/3;
+    }
+    .card-advantages {
+        border-bottom-left-radius: 0px;
+    }
+    .card-price {
+        border-bottom-left-radius: 10px;
+    }
+    .card-price__btn:hover {
+        box-shadow: 0 0px 0px 0px rgba(0,0,0,.1);
+    }
+    .card-descr__title,
+    .card-descr__subtitle,
+    .card-price__title,
+    .card-price__price,
+    .card-price__text,
+    .card-advantages__title {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
